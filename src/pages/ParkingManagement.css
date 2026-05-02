@@ -1,0 +1,334 @@
+/* =====================================================
+   PARKING MANAGEMENT STYLES
+   ===================================================== */
+
+.parking-lots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.parking-lot-card {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.parking-lot-card.selected {
+  border-color: var(--accent-secondary);
+  box-shadow: var(--shadow-glow-purple);
+}
+
+.lot-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.lot-card-header h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.lot-location {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Occupancy Bar */
+.lot-occupancy {
+  margin-bottom: 14px;
+}
+
+.occupancy-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.occupancy-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.6s ease;
+}
+
+.occupancy-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.lot-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lot-type {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  padding: 2px 8px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.lot-rate {
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent-secondary);
+}
+
+/* Layout */
+.parking-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.parking-left, .parking-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Entry Card */
+.parking-entry-card {
+  padding: 24px;
+}
+
+.parking-entry-card h3, .active-session-card h3,
+.barrier-card h3, .sessions-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Active Session */
+.active-session-card {
+  padding: 24px;
+}
+
+.session-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.session-header h3 {
+  margin-bottom: 0;
+}
+
+/* Timer */
+.session-timer {
+  text-align: center;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+}
+
+.timer-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.timer-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.05em;
+}
+
+.timer-running {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--accent-success);
+  margin-top: 6px;
+}
+
+.timer-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-success);
+  animation: pulse-glow 1.5s infinite;
+}
+
+.session-qr {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+/* Exit Processing */
+.exit-processing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+}
+
+.exit-processing p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.exit-complete {
+  text-align: center;
+  padding: 20px;
+  background: var(--accent-success-dim);
+  border-radius: var(--radius-md);
+}
+
+.exit-success-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.exit-complete h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent-success);
+  margin-bottom: 4px;
+}
+
+.exit-fee {
+  font-size: 1.3rem;
+  font-weight: 800;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.exit-message {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Barrier Visual */
+.barrier-card {
+  padding: 24px;
+}
+
+.parking-barrier-visual {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  gap: 20px;
+}
+
+.p-barrier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.p-barrier-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.p-barrier-pole {
+  width: 6px;
+  height: 40px;
+  background: #6b7280;
+  border-radius: 3px;
+}
+
+.p-barrier-arm {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #ef4444, #f59e0b);
+  border-radius: 2px;
+  transform-origin: left center;
+  transition: transform 0.6s ease;
+}
+
+.p-barrier-arm.open {
+  transform: rotate(-80deg);
+}
+
+.p-barrier-light {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.1);
+  transition: all var(--transition-normal);
+}
+
+.p-barrier-light.red {
+  background: #ef4444;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
+}
+
+.p-barrier-light.green {
+  background: #10b981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+.p-road {
+  flex: 1;
+  height: 16px;
+  background: #374151;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.p-road-line {
+  width: 20px;
+  height: 2px;
+  background: #fbbf24;
+  border-radius: 1px;
+}
+
+/* Sessions Card */
+.sessions-card {
+  padding: 24px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .parking-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .parking-lots-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .parking-lots-grid {
+    grid-template-columns: 1fr;
+  }
+}
